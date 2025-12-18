@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Records</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    th {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    tr:hover {
+      background: #f1f3ff;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 10px 18px;
+      background: #667eea;
+      color: white;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    a:hover {
+      background: #5a67d8;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Employee Records</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Emp ID</th>
+    <th>Department</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+
+  {% for emp in employees %}
+  <tr>
+    <td>{{ emp[0] }}</td>
+    <td>{{ emp[1] }}</td>
+    <td>{{ emp[2] }}</td>
+    <td>{{ emp[3] }}</td>
+    <td>{{ emp[4] }}</td>
+    <td>{{ emp[5] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="actions">
+  <a href="/download">⬇ Download CSV</a>
+</div>
+
+</body>
+</html>
